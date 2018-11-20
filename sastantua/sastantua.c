@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <unistd.h>
 
 #define SLASH       47
@@ -126,15 +127,10 @@ void  sastantua(int size)
   }
 }
 
-int main (void)
+int main(int argc, char *argv[])
 {
-  int i;
+  if (argc != 2)
+    return (1);
 
-  i = 1;
-  while (i <= 10)
-  {
-    sastantua(i);
-    ft_putchar('\n');
-    i++;
-  }
+  sastantua(atoi(argv[1]));
 }
